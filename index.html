@@ -128,7 +128,7 @@
     <h3>
       <marquee>Nama : Jaisy A.S</marquee>
     </h3>
-    <img src="https://picsum.photos/200/300" alt="Image holder" />
+    <!-- <img src="https://picsum.photos/200/300" alt="Image holder" /> -->
 
     <p>
       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
@@ -172,6 +172,36 @@
   </div>
 
   <div id="loading"></div>
+
+  <p id="demo"></p>
+  <button onclick="getLocation()">Dapatkan lokasi</button>
+
+  <script>
+    const x = document.getElementById("demo");
+
+    async function getLocation() {
+      if (navigator.geolocation) {
+        await navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+
+    async function showPosition(position) {
+
+      const coord = [position.coords.latitude, position.coords.longitude]
+      fetch(`https://nominatim.openstreetmap.org/reverse?lat=${coord[0]}&lon=${coord[1]}&format=json`, {
+        headers: {
+          'User-Agent': 'ID of your APP/service/website/etc. v0.1'
+        }
+      }).then(res => res.json())
+        .then(res => {
+          console.log(res.display_name)
+          console.log(res.address)
+          x.innerHTML = JSON.stringify(res.address)
+        })
+    }
+  </script>
 
 </body>
 
