@@ -1,108 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV Saya</title>
+  <title>Judul Web</title>
 
   <style>
     body {
-      padding: 4px;
-      justify-content: center;
       text-align: center;
-    }
-
-    nav>ul {
-      justify-content: center;
-      display: flex;
-    }
-
-    nav>ul>li {
-      list-style: none;
-      border: 1px solid black;
-      min-width: 100px;
-      margin: 4px;
-      padding: 4px;
-      border-radius: 8px;
-      cursor: pointer;
-      background-color: black;
-      color: white;
-    }
-
-    nav>ul>li:hover {
-      background-color: white;
-      color: black;
-    }
-
-    .card {
-      border: 2px dotted;
-      margin-bottom: 12px;
-      padding-bottom: 12px;
-    }
-
-    .card>p {
-      text-align: justify;
-      padding: 8px;
-    }
-
-    .receiver {
-      font-weight: 600;
-    }
-
-    .card>ul>li {
-      list-style: none;
-    }
-
-    #daftarKomentar {
-      text-align: left !important;
-    }
-
-    form {
-      padding: 8px;
-    }
-
-    .btn {
-      width: 100%;
-      margin: 4px;
-      padding: 4px;
-      border-radius: 20px;
-      border-color: transparent;
-      color: white;
-      background-color: rgb(124, 124, 237);
-      cursor: pointer;
-    }
-
-    .form-group {
       display: block;
-      max-width: 100%;
-      text-align: left;
-      padding: 8px;
-    }
-
-    .form-group>input,
-    textarea {
-      width: 100% !important;
-      margin-top: 8px
-    }
-
-    textarea {
-      max-height: 300px;
+      padding: 4px;
     }
 
     #loading {
       border: 7px solid;
       max-width: 100px;
-      min-height: 100px;
-      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      background-color: transparent;
-      border-color: red black black black;
+      border-color: cyan black black black;
       animation: rotate 2s linear infinite;
-      position: absolute;
+      position: relative;
+      width: 100px;
       top: 45%;
       left: 45%;
-      display: none;
+      /* display: none; */
     }
 
     @keyframes rotate {
@@ -110,11 +29,92 @@
         transform: rotate(365deg);
       }
     }
+
+    nav>ul {
+      display: flex;
+      justify-content: center;
+    }
+
+    nav>ul>li {
+      list-style: none;
+      padding: 4px;
+      margin: 4px;
+      min-width: 100px;
+      border: 1px solid;
+      border-radius: 20%;
+      cursor: pointer;
+    }
+
+    nav>ul>li:hover {
+      background-color: black;
+      color: white;
+    }
+
+    .card {
+      border: 2px dotted;
+      margin-bottom: 8px;
+    }
+
+    .card>p {
+      padding: 16px;
+      text-align: justify;
+    }
+
+    #daftarKomentar {
+      text-align: left;
+    }
+
+    #daftarKomentar>li {
+      list-style: none;
+    }
+
+    #daftarKomentar>li>span {
+      font-weight: 600;
+      font-size: 18px
+    }
+
+    form {
+      padding: 8px;
+      ;
+    }
+
+    .form-group {
+      width: 100%;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    #backdrop {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top:0;
+      left: 0;
+      background-color: white;
+    }
+
+    .form-group>button {
+      width: 100%;
+      padding: 8px;
+      border-radius: 20px;
+      margin-top: 8px;
+      background-color: black;
+      border-color: black;
+      color: white;
+    }
+
+    .form-group>input,
+    textarea {
+      width: 100%;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
   </style>
 </head>
 
 <body>
-  <h1>Profile Saya</h1>
+  <h1>Profile Jay</h1>
+
   <nav>
     <ul>
       <li>Home</li>
@@ -125,83 +125,50 @@
 
   <div class="card">
     <h2>About</h2>
-    <h3>
-      <marquee>Nama : Jaisy A.S</marquee>
-    </h3>
-    <!-- <img src="https://picsum.photos/200/300" alt="Image holder" /> -->
-
-    <p>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-      standard
-      dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-      specimen
-      book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-      essentially
-      unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-      and more
-      recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    </p>
+    <video src="Ustadz khalid.mp4" controls></video>
+    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin
+      literature
+      from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in
+      Virginia,
+      looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the
+      cites of
+      the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
+      1.10.33
+      of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a
+      treatise
+      on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor
+      sit
+      amet..", comes from a line in section 1.10.32.</p>
   </div>
 
   <div class="card">
-    <h2>Kirim Komentar</h2>
+    <h2>Komentar</h2>
     <form method="post" action="#">
       <div class="form-group">
         <label for="nama">Nama</label>
-        <input type="text" id="nama" placeholder="Tulis nama kamu">
-
+        <input type="text" placeholder="Ketik nama kamu.." id="nama" name="nama">
       </div>
       <div class="form-group">
-        <label for="nama">Komentar</label>
-        <textarea id="komentar" placeholder="Tulis komentar kamu"></textarea>
-
+        <label for="komentar">Komentar</label>
+        <textarea type="text" placeholder="Ketik komentar kamu.." id="komentar" name="komentar"></textarea>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn">Kirim Komentar</button>
-
+        <button type="submit">Kirim Komentar</button>
       </div>
     </form>
   </div>
 
   <div class="card">
-    <h2>Komentar</h2>
-
+    <h2>Daftar Komentar</h2>
     <ul id="daftarKomentar">
-      <li><span class="receiver">Bayu</span> : Cek komentar</li>
+      <li><span>Regaz</span> : Hii!</li>
     </ul>
   </div>
 
-  <div id="loading"></div>
+  <div id="backdrop">
+    <div id="loading"></div>
+  </div>
 
-  <p id="demo"></p>
-  <button onclick="getLocation()">Dapatkan lokasi</button>
-
-  <script>
-    const x = document.getElementById("demo");
-
-    async function getLocation() {
-      if (navigator.geolocation) {
-        await navigator.geolocation.getCurrentPosition(showPosition);
-      } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-      }
-    }
-
-    async function showPosition(position) {
-
-      const coord = [position.coords.latitude, position.coords.longitude]
-      fetch(`https://nominatim.openstreetmap.org/reverse?lat=${coord[0]}&lon=${coord[1]}&format=json`, {
-        headers: {
-          'User-Agent': 'ID of your APP/service/website/etc. v0.1'
-        }
-      }).then(res => res.json())
-        .then(res => {
-          console.log(res.display_name)
-          console.log(res.address)
-          x.innerHTML = JSON.stringify(res.address)
-        })
-    }
-  </script>
 
 </body>
 
