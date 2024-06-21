@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Saya</title>
+
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+  <h1>Profile Saya</h1>
+  <nav>
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+      <li>Komentar</li>
+    </ul>
+  </nav>
+
+  <div class="card">
+    <h2>About</h2>
+    <h3>
+      <marquee>Nama : Jaisy A.S</marquee>
+    </h3>
+    <img src="https://picsum.photos/200/300" alt="Image holder" />
+
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+      standard
+      dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+      specimen
+      book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+      essentially
+      unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+      and more
+      recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Kirim Komentar</h2>
+    <form method="post" action="#">
+      <div class="form-group">
+        <label for="nama">Nama</label>
+        <input type="text" id="nama" placeholder="Tulis nama kamu">
+
+      </div>
+      <div class="form-group">
+        <label for="nama">Komentar</label>
+        <textarea id="komentar" placeholder="Tulis komentar kamu"></textarea>
+
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn">Kirim Komentar</button>
+
+      </div>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>Komentar</h2>
+
+    <ul id="daftarKomentar">
+      <li><span class="receiver">Bayu</span> : Cek komentar</li>
+    </ul>
+  </div>
+
+  <div id="loading"></div>
+
+</body>
+
+</html>
