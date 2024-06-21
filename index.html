@@ -6,7 +6,111 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CV Saya</title>
 
-  <link rel="stylesheet" href="index.css" />
+  <style>
+    body {
+      padding: 4px;
+      justify-content: center;
+      text-align: center;
+    }
+
+    nav>ul {
+      justify-content: center;
+      display: flex;
+    }
+
+    nav>ul>li {
+      list-style: none;
+      border: 1px solid black;
+      min-width: 100px;
+      margin: 4px;
+      padding: 4px;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: black;
+      color: white;
+    }
+
+    nav>ul>li:hover {
+      background-color: white;
+      color: black;
+    }
+
+    .card {
+      border: 2px dotted;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+    }
+
+    .card>p {
+      text-align: justify;
+      padding: 8px;
+    }
+
+    .receiver {
+      font-weight: 600;
+    }
+
+    .card>ul>li {
+      list-style: none;
+    }
+
+    #daftarKomentar {
+      text-align: left !important;
+    }
+
+    form {
+      padding: 8px;
+    }
+
+    .btn {
+      width: 100%;
+      margin: 4px;
+      padding: 4px;
+      border-radius: 20px;
+      border-color: transparent;
+      color: white;
+      background-color: rgb(124, 124, 237);
+      cursor: pointer;
+    }
+
+    .form-group {
+      display: block;
+      max-width: 100%;
+      text-align: left;
+      padding: 8px;
+    }
+
+    .form-group>input,
+    textarea {
+      width: 100% !important;
+      margin-top: 8px
+    }
+
+    textarea {
+      max-height: 300px;
+    }
+
+    #loading {
+      border: 7px solid;
+      max-width: 100px;
+      min-height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      background-color: transparent;
+      border-color: red black black black;
+      animation: rotate 2s linear infinite;
+      position: absolute;
+      top: 45%;
+      left: 45%;
+      display: none;
+    }
+
+    @keyframes rotate {
+      to {
+        transform: rotate(365deg);
+      }
+    }
+  </style>
 </head>
 
 <body>
