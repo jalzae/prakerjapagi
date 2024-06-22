@@ -88,9 +88,10 @@
       width: 100%;
       height: 100%;
       position: fixed;
-      top:0;
+      top: 0;
       left: 0;
       background-color: white;
+      display: none;
     }
 
     .form-group>button {
@@ -143,7 +144,7 @@
 
   <div class="card">
     <h2>Komentar</h2>
-    <form method="post" action="#">
+    <form id="formulir" method="post" action="#">
       <div class="form-group">
         <label for="nama">Nama</label>
         <input type="text" placeholder="Ketik nama kamu.." id="nama" name="nama">
@@ -168,6 +169,77 @@
   <div id="backdrop">
     <div id="loading"></div>
   </div>
+
+  <script>
+
+    const formulir = document.getElementById('formulir')
+    const nama = document.getElementById('nama')
+    const komentar = document.getElementById('komentar')
+    const daftarKomentar = document.getElementById('daftarKomentar')
+    const backdrop = document.getElementById('backdrop')
+
+    const getData = () => {
+      let list = []
+      const komentarList = localStorage.getItem('komentar')
+      if (!komentarList) {
+        localStorage.setItem('komentar', JSON.stringify([]))
+        list = JSON.parse(localStorage.getItem('komentar'))
+      } else {
+        list = JSON.parse(komentarList)
+      }
+
+      daftarKomentar.innerHTML = ''
+
+      for (const item of list) {
+        daftarKomentar.innerHTML += `<li><span>${item.nama}</span> : ${item.komentar}</li>`
+      }
+    }
+
+    const loading = () => {
+      backdrop.style.display = 'block'
+    }
+
+    const unloading = () => {
+      backdrop.style.display = 'none'
+    }
+
+    const kirimKomentar = () => {
+
+      if (nama.value == '') {
+        alert('Nama kosong')
+        return false
+      }
+
+      if (komentar.value == '') {
+        alert('Komentar kosong')
+        return false
+      }
+
+      daftarKomentar.innerHTML += `<li><span>${nama.value}</span> : ${komentar.value}</li>`
+
+      const getKomentar = JSON.parse(localStorage.getItem('komentar')) ?? []
+      getKomentar.push({
+        nama: nama.value,
+        komentar: komentar.value
+      })
+      localStorage.setItem('komentar', JSON.stringify(getKomentar))
+
+      nama.value = ''
+      komentar.value = ''
+    }
+
+    formulir.onsubmit = (e) => {
+      e.preventDefault()
+      loading()
+      kirimKomentar()
+      unloading()
+    }
+
+    (() => {
+      getData()
+    })()
+
+  </script>
 
 
 </body>
