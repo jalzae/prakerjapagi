@@ -88,9 +88,10 @@
       width: 100%;
       height: 100%;
       position: fixed;
-      top:0;
+      top: 0;
       left: 0;
       background-color: white;
+      display: none;
     }
 
     .form-group>button {
@@ -143,7 +144,7 @@
 
   <div class="card">
     <h2>Komentar</h2>
-    <form method="post" action="#">
+    <form id="formulir" method="post" action="#">
       <div class="form-group">
         <label for="nama">Nama</label>
         <input type="text" placeholder="Ketik nama kamu.." id="nama" name="nama">
@@ -168,6 +169,70 @@
   <div id="backdrop">
     <div id="loading"></div>
   </div>
+
+  <script>
+    const formulir = document.getElementById('formulir')
+    const daftarKomentar = document.getElementById('daftarKomentar')
+    const nama = document.getElementById('nama')
+    const komentar = document.getElementById('komentar')
+    const backdrop = document.getElementById('backdrop')
+
+    function getdata() {
+      const listKomentar = localStorage.getItem('komentar')
+      daftarKomentar.innerHTML = ''
+      if (listKomentar) {
+        for (const item of JSON.parse(listKomentar)) {
+          daftarKomentar.innerHTML += `<li><span>${item.nama}</span> : ${item.komentar}</li>`
+        }
+      }
+    }
+
+    function storeData(nama, komentar) {
+      const listKomentar = localStorage.getItem('komentar')
+
+      if (!listKomentar) {
+        localStorage.setItem('komentar', JSON.stringify([]))
+      }
+
+      if (listKomentar) {
+        const tempKomentar = JSON.parse(listKomentar)
+        tempKomentar.push({
+          nama,
+          komentar
+        })
+        localStorage.setItem('komentar', JSON.stringify(tempKomentar))
+      }
+    }
+
+    function kirimKomentar() {
+      daftarKomentar.innerHTML += `<li><span>${nama.value}</span> : ${komentar.value}</li>`
+      storeData(nama.value, komentar.value)
+      nama.value = ''
+      komentar.value = ''
+    }
+
+    formulir.onsubmit = (e) => {
+      e.preventDefault()
+
+      if (nama.value == '') {
+        alert('Nama kosong')
+        return false
+      }
+
+      if (komentar.value == '') {
+        alert('Komentar kosong')
+        return false
+      }
+
+
+      kirimKomentar()
+    }
+
+    (() => {
+      getdata()
+    })()
+
+  </script>
 
 
 </body>
